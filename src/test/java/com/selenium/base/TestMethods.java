@@ -48,9 +48,9 @@ public class TestMethods {
 
     public void selectGender(String gender) {
         homePageBeforeLogIn.selectGender(gender);
-        if (gender == "male") {
+        if (gender.equals("male") ) {
             logger.info("Erkek Kategorisi Seçildi.");
-        } else if (gender == "female") {
+        } else if (gender.equals("female")) {
             logger.info("Kadın Kategorisi seçildi");
         } else {
             logger.info("Herhangi bir kategori seçilmedi");
@@ -67,7 +67,8 @@ public class TestMethods {
     }
 
     public void logIn() throws InterruptedException {
-        loginPage.logInMethod("fakemail@gmail.com", "fakepassword");
+        loginPage.logInMethod("fake@gmail.com", "fakepass");
+        // password is hidden for security reasons. Use your own credentials while running the test.
         logger.info("Giriş Yaptınız. Yöndendirilen Sayfa: " + driver.getTitle());
         homePageAfterLogIn = new HomePageAfterLogIn(driver);
         TimeUnit.SECONDS.sleep(3);
@@ -133,6 +134,7 @@ public class TestMethods {
     }
 
     public void emptyTheCart() {
+        cartPage.productRemoveFromTheCartMethod();
 
     }
 }

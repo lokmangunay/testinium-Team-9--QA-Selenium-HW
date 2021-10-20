@@ -11,6 +11,7 @@ public class TestingTrendyol extends TestMethods {
     @Before
     public void before() {
         productDetailPage = new ProductDetailPage(driver);
+
     }
 
     @Test
@@ -23,14 +24,14 @@ public class TestingTrendyol extends TestMethods {
         switchToNextTab();
         productDetailPage
                 .addToFavMethod().
-                addToCartMethod()
-                .goToCartMethod();
-
+                addToCartMethod();
+        goToCart();
         isProductAddedToCart();
+        emptyTheCart();
     }
 
 
-    @After
+  @After
   public void tearDown(){
         terminateTheTest();
   }

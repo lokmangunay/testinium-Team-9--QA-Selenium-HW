@@ -10,9 +10,13 @@ public class CartPage extends BasePage {
         super(driver);
     }
     public By productNameLocatorOnCartPage= By.xpath("//p[@class='pb-item']");
+    public By productRemoveFromTheCartButton=By.cssSelector("i[class='i-trash']");
 
    public String getProductNameOnCartPage(){
        return find(productNameLocatorOnCartPage).getText();
 
+   }
+   public void productRemoveFromTheCartMethod(){
+       click(productRemoveFromTheCartButton);
    }
 }
