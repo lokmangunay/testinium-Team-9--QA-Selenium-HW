@@ -48,7 +48,7 @@ public class TestMethods {
 
     public void selectGender(String gender) {
         homePageBeforeLogIn.selectGender(gender);
-        if (gender.equals("male") ) {
+        if (gender.equals("male")) {
             logger.info("Erkek Kategorisi Seçildi.");
         } else if (gender.equals("female")) {
             logger.info("Kadın Kategorisi seçildi");
